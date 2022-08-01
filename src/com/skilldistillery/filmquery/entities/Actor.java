@@ -1,12 +1,21 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Actor {
 private int id;
 private String firstName;
 private String lastName;
+private ArrayList<Film> films;
 
+public Actor(int id, String firstName, String lastName, ArrayList<Film> films) {
+	super();
+	this.id = id;
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.films = films;
+}
 
 public Actor() { 
 }
@@ -61,10 +70,15 @@ public boolean equals(Object obj) {
 
 @Override
 public String toString() {
-	StringBuilder builder = new StringBuilder();
-	builder.append("Actor [id=").append(id).append(", firstName=").append(firstName).append(", lastName=")
-			.append(lastName).append("]");
-	return builder.toString();
+	return "[Id: " + id + " Name: " + firstName + " " + lastName + "]" + "\n";
+}
+
+public ArrayList<Film> getFilms() {
+	return films;
+}
+
+public void setFilms(ArrayList<Film> films) {
+	this.films = films;
 }
 
 

@@ -1,29 +1,53 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import com.skilldistillery.filmquery.database.DatabaseAccessorObject;
 
 public class Film {
 	private int id;
 	private String title;
 	private String description;
 	private int releaseYear;
-	private String languageId;
+	private int languageId;
 	private int rentalDuration;
 	private double rentalRate;
 	private int length;
 	private double replacementCost;
 	private String rating;
 	private String specialFeatures;
+	private List<Actor> actors;
+	
+	
+	
 	
 	public Film() {
 		
 	}
 	
-	
-	
+//	public Film(int id, String title, String description, int releaseYear, String languageId, int rentalDuration,
+//			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
+//		super();
+//		this.id = id;
+//		this.title = title;
+//		this.description = description;
+//		this.releaseYear = releaseYear;
+//		this.languageId = languageId;
+//		this.rentalDuration = rentalDuration;
+//		this.rentalRate = rentalRate;
+//		this.length = length;
+//		this.replacementCost = replacementCost;
+//		this.rating = rating;
+//		this.specialFeatures = specialFeatures;
+//	}
 
-	public Film(int id, String title, String description, int releaseYear, String languageId, int rentalDuration,
-			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
+
+
+	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
+			double rentalRate, int length, double replacementCost, String rating, String specialFeatures,
+			List<Actor> actors) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -38,8 +62,13 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 	}
 
-
-
+	public List<Actor> getActorList(){
+		return actors;
+	}
+	
+	public void setActorList(List<Actor> actors) {
+		this.actors = actors;
+	}
 
 	public int getId() {
 		return id;
@@ -65,10 +94,10 @@ public class Film {
 	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
-	public String getLanguageId() {
+	public int getLanguageId() {
 		return languageId;
 	}
-	public void setLanguageId(String languageId) {
+	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
 	}
 	public int getRentalDuration() {
@@ -135,14 +164,7 @@ public class Film {
 	
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Film [id=").append(id).append(", title=").append(title).append(", description=")
-				.append(description).append(", releaseYear=").append(releaseYear).append(", languageId=")
-				.append(languageId).append(", rentalDuration=").append(rentalDuration).append(", rentalRate=")
-				.append(rentalRate).append(", length=").append(length).append(", replacementCost=")
-				.append(replacementCost).append(", rating=").append(rating).append(", specialFeatures=")
-				.append(specialFeatures).append("]");
-		return builder.toString();
+		return "FILM ID:" + id + ", TITLE:" + title + ", RELEASE YEAR:" + releaseYear +", RATING:" + rating+ "\n" + "DESCRIPTION:" + description;
 	}
 
 
