@@ -52,7 +52,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				film.setRating(filmResult.getString("rating"));
 				film.setSpecialFeatures(filmResult.getString("special_features"));
 
-			
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -77,7 +76,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				actor.setId(actorResult.getInt("id"));
 				actor.setLastName(actorResult.getString("last_name"));
 				actor.setFirstName(actorResult.getString("first_name"));
-				//actor.setFilms(findActorById(actorId));
 			} else {
 				System.out.println("Actor not found with that ID number.");
 			}
@@ -159,8 +157,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		return films;
 	}
 
-	
-	
 	public String findLanguageByFilm(int langId) {
 		String lang = null;
 
@@ -173,8 +169,8 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 			if (rs.next()) {
 				lang = rs.getString("name");
-			} 
-			
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

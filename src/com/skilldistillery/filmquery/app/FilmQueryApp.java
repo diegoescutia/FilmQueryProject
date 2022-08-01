@@ -11,9 +11,7 @@ import com.skilldistillery.filmquery.entities.Film;
 
 public class FilmQueryApp {
 
-	// DatabaseAccessor db = new DatabaseAccessorObject();
 	DatabaseAccessor dao = new DatabaseAccessorObject();
-	// Actor actor = new Actor();
 	Film film = new Film();
 
 	public static void main(String[] args) {
@@ -76,7 +74,6 @@ public class FilmQueryApp {
 			System.out.println("LANGUAGE: " + lang);
 			System.out.println("CAST:");
 			System.out.println(dao.findActorsByFilmId(film.getId()));
-			
 
 		}
 
@@ -94,10 +91,8 @@ public class FilmQueryApp {
 			System.out.println(daos.findLanguageByFilm(film.getLanguageId()));
 			System.out.println(daos.findActorsByFilmId(film.getId()));
 		}
-		System.out.println("*****Found: "+listByKeyword.size()+" matches*****");
+		System.out.println("*****Found: " + listByKeyword.size() + " matches*****");
 	}
-
-	// results = dao.findFilmByKeyWord(keyword);
 
 	public void menu() {
 		System.out.println("         =================");
